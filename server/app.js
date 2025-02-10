@@ -18,7 +18,7 @@ app.use(cors())
   allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
 })); */
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 export const instance = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
@@ -28,7 +28,7 @@ export const instance = new Razorpay({
 app.use(express.json())
 app.use("/api/auth", AuthRouter)
 app.use("/api/admin", AdminRouter)
-app.use("/api/", CarRouter)
+app.use("/api", CarRouter)
 app.use("/api/payment", PaymentRoute);
 
 app.listen(PORT, () => {
