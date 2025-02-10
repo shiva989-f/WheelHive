@@ -60,7 +60,7 @@ const CarDetailPopup = ({ data, isOpen, onClose }) => {
         }
     }
 
-    const headers = { Authorization: token }
+    const headers = { authorization: token }
 
     // Creates payment order
     const handlePayment = async () => {

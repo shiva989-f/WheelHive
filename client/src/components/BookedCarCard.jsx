@@ -6,7 +6,7 @@ import { handleError, handleSuccess } from '../Util';
 const BookedCarCard = ({ item }) => {
 
     const { baseURL, token } = useAuth()
-    const headers = { Authorization: token }
+    const headers = { authorization: token }
     const startFormattedDate = new Date(item.startDate).toLocaleDateString("en-GB");
 
     const endFormattedDate = new Date(item.endDate).toLocaleDateString("en-GB");

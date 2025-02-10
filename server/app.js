@@ -10,13 +10,13 @@ import PaymentRoute from "./routes/PaymentRoute.js";
 
 const app = express();
 configDotenv()
-app.use(cors())
-/* app.use(cors({
-  origin: [""],
-  credentials: true, // Allow cookies & authentication headers
-  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-})); */
+app.use(
+  cors({
+    origin: "*", // Or specify frontend URL: 'https://yourfrontend.com'
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"], // Ensure Authorization header is allowed
+  })
+);
 
 const PORT = process.env.PORT || 3000;
 

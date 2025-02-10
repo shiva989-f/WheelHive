@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 export const ensureAuthentication = async (req, res, next)=> {
     const auth = req.headers["authorization"];
     if (!auth) {
-        return res.status(403).json({msg: "Unauthorized, Please login!", success: true})
+        return res.status(403).json({msg: "Unauthorized, Please login!", success: false})
     }
 
     try {
